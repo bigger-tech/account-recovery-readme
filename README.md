@@ -2,11 +2,11 @@
 This API implements the [SEP-30](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0030.md) protocol. Enables an individual (e.g., a user or wallet) to regain access to a Stellar account that it owns after the individual has lost its private key without providing any third-party control of the account.
 
 ## Table of Contents
-* [Implementation](https://github.com/bigger-tech/account-recovery-readme/main/README.md#how-to-implement-account-recovery-api)
-   * [External authentication endpoints](https://github.com/bigger-tech/account-recovery-readme/main/README.md#external-authentication-endpoints)
-   * [Errors](https://github.com/bigger-tech/account-recovery-readme/main/README.md#errors)
-   * [SEP-30 endpoints](https://github.com/bigger-tech/account-recovery-readme/main/README.md#sep-30-endpoints)
-   * [SEP-10 endpoints](https://github.com/bigger-tech/account-recovery-readme/main/README.md#sep-10-endpoints)
+* [Implementation](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#how-to-implement-account-recovery-api)
+   * [External authentication endpoints](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#external-authentication-endpoints)
+   * [Errors](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#errors)
+   * [SEP-30 endpoints](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#sep-30-endpoints)
+   * [SEP-10 endpoints](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#sep-10-endpoints)
 
 ## How to implement Account Recovery API
 Account Recovery API provides two custom endpoints to authenticate externally using the authentication methods defined by the server, one to request a verification code, and another to send it and receive a JWT in return.
@@ -24,8 +24,8 @@ Type | Description
 
 ### External authentication Endpoints   
 
-* [`POST /api/external-auth/verification/<address>`](https://github.com/bigger-tech/account-recovery-readme/edit/main/README.md#post-apiexternal-authverificationaddress)
-* [`POST /api/external-auth/authentication/<address>`](https://github.com/bigger-tech/account-recovery-readme/edit/main/README.md#post-apiexternal-authauthenticationaddress)
+* [`POST /api/external-auth/verification/<address>`](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#post-apiexternal-authverificationaddress)
+* [`POST /api/external-auth/authentication/<address>`](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#post-apiexternal-authauthenticationaddress)
 
 ####  `POST /api/external-auth/verification/<address>`
 
@@ -39,7 +39,7 @@ Request Parameters:
 
 Name | Type  | Description
 -----|------ |------------
-`type` | string | Auth method type defined in [External authentication methods](https://github.com/bigger-tech/account-recovery-readme/edit/main/README.md#external-authentication-methods), one of the `auth_methods` previously registered in the [POST /accounts/<address>](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0030.md#post-accountsaddress) endpoint.
+`type` | string | Auth method type defined in [External authentication methods](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#external-authentication-methods), one of the `auth_methods` previously registered in the [POST /accounts/<address>](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0030.md#post-accountsaddress) endpoint.
 `value`| string | One of the auth values previously registered in the [POST /accounts/<address>](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0030.md#post-accountsaddress) endpoint, with which the user wants to receive the verification code.
 
 Example:
@@ -66,9 +66,9 @@ Request Parameters:
 
 Name | Type  | Description
 -----|------ |------------
-`type` | string | Auth method type defined in [External authentication methods](https://github.com/ScaleMote/account-recovery-readme/edit/main/README.md#external-authentication-methods), one of the auth values previously registered in the [POST /accounts/<address>](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0030.md#post-accountsaddress) endpoint.
+`type` | string | Auth method type defined in [External authentication methods](https://github.com/ScaleMote/account-recovery-readme/blob/main/README.md#external-authentication-methods), one of the auth values previously registered in the [POST /accounts/<address>](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0030.md#post-accountsaddress) endpoint.
 `value`| string | One of the auth values previously registered in the [POST /accounts/<address>](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0030.md#post-accountsaddress) endpoint, with which the user wants to receive the verification code.
-`verification_code` | string | Verification code received in the auth_method requested in the [POST api/external-auth/verification/<address>](https://github.com/bigger-tech/account-recovery-readme/edit/main/README.md#post-apiexternal-authverificationaddress)
+`verification_code` | string | Verification code received in the auth_method requested in the [POST api/external-auth/verification/<address>](https://github.com/bigger-tech/account-recovery-readme/blob/main/README.md#post-apiexternal-authverificationaddress)
 
 Example:
 ```
